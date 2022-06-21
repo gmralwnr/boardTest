@@ -1,0 +1,6 @@
+package com.black.board.dao;
+
+@Mapper
+public interface IBoardDao {
+
+}

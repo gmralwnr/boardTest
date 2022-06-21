@@ -1,0 +1,5 @@
+package com.black.board.controller;
+
+public class MemberService {
+
+}

@@ -1,0 +1,42 @@
+package com.black.board.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.black.board.service.BoardService;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	BoardService bs;
+	
+	@RequestMapping("/")
+	public ModelAndView Main(Model model, HttpServletRequest request) {
+
+		ModelAndView mav = new ModelAndView();
+		
+		
+		mav.addObject("boardList", bs.selectBoardAll());
+		mav.setViewName("board");
+	
+		return mav;
+		
+	}
+	
+	@RequestMapping("boardDetail")
+	public ModelAndView BoardDetail(HttpServletRequest request, @RequestParam("num") int num) {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("boardDetail", bs.selectDetail());
+		
+		
+		return mav;
+	}
+
+}

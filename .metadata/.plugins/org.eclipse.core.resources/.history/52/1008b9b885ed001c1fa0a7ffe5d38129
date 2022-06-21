@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.black.board.dao.IBoardDao">
+  <resultMap id="boardMap" type="java.util.HashMap"></resultMap>
+  
+  
+  <select id="selectBoardAll" resultType="com.black.board.dto.BoardVO">
+  select * from once order by num desc
+  </select>
+  
+  
+  <select id="selectDetail" resultType="com.black.board.dto.BoardVO">
+  select * from once where num= #{param}
+  
+  </select>
+  </mapper>

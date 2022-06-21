@@ -1,0 +1,10 @@
+package com.black.board.dao;
+
+import com.black.board.dto.MemberVO;
+
+@Mapper
+public interface IMemberDao {
+
+	MemberVO getMember(String userid);
+
+}

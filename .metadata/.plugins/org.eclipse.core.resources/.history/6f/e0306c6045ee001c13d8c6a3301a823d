@@ -1,0 +1,13 @@
+package com.black.board.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.black.board.controller.service.MemberService;
+
+@Controller
+public class MemberController {
+
+	
+	@Autowired
+	MemberService ms;
+}
