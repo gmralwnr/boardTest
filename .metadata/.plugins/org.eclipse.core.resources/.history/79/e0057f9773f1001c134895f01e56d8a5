@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +56,6 @@ public class MemberController {
 			return "loginForm";
 		}else if(mvo.getPwd().equals(membervo.getPwd())) {
 			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", mvo);
 			return "redirect:/board";
 		}else
 			model.addAttribute("message","무슨이유인지 모르겠습니다");

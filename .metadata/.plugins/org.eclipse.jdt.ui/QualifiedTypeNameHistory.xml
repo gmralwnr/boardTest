@@ -10,6 +10,7 @@
 <fullyQualifiedTypeName name="com.black.board.dto.BoardVO"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="com.black.board.dto.MemberVO"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
+<fullyQualifiedTypeName name="com.black.board.dto.MemberVO"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

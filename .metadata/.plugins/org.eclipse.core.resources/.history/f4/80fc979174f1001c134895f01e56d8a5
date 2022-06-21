@@ -47,10 +47,9 @@ public class BoardController {
 		
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginUser")==null) {
-			
 			mav.setViewName("loginForm");
-			
-		}else {
+		}
+		else if{
 		
 		HashMap<String , Object> resultMap = bs.selectDetail(num);
 		BoardVO mvo = (BoardVO)resultMap.get("board");

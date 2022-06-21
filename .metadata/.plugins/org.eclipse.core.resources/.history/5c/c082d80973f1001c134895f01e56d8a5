@@ -27,16 +27,12 @@ public class BoardController {
 		
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
-		if(session.getAttribute("loginUser")==null) {
-			mav.setViewName("loginForm");
-			
-		}else {
-		
+		MemberVO dto =(MemberVO) session.getAttribute("loginUser");
 		//세션 창 닫기 전까지 로그 아웃하기전 유지 
 		
 		mav.addObject("boardList", bs.selectBoardAll());
 		mav.setViewName("board");
-		}
+	
 		return mav;
 		
 	}
@@ -45,19 +41,13 @@ public class BoardController {
 	public ModelAndView BoardDetail(HttpServletRequest request, @RequestParam("num") int num) {
 		ModelAndView mav = new ModelAndView();
 		
-		HttpSession session = request.getSession();
-		if(session.getAttribute("loginUser")==null) {
-			
-			mav.setViewName("loginForm");
-			
-		}else {
 		
 		HashMap<String , Object> resultMap = bs.selectDetail(num);
 		BoardVO mvo = (BoardVO)resultMap.get("board");
 		mav.addObject("board", mvo);
 		//mav.addObject("board", resultMap.get("board"));
 		mav.setViewName("boardDetail");
-		}
+		
 		return mav;
 	}
 
